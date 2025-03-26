@@ -7,7 +7,7 @@
 ;; Navigation functions
 (defn navigate! [route]
   (swap! route-state assoc :current-route route))
-
+(navigate! :about)
 ;; Hero section component
 (defn hero-section []
   [:div.hero-section
@@ -98,7 +98,6 @@
                             (navigate! :contact)
                             (reset! menu-open false))
                  :class (when (= current-route :contact) "active")} "Contact"]]]]]))
-
 
 ;; Router component
 (defn router []
